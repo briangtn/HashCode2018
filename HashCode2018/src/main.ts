@@ -69,12 +69,13 @@ var trip1: Trip = new Trip(new Vector2(0, 0), new Vector2(0, 3), 0, 9);
 var trip2: Trip = new Trip(new Vector2(5, 0), new Vector2(1, 3), 0, 9);
 var arr_trip: Trip[] = [trip1, trip2];
 var arr_veh: Car[] = [];
+var step: number = 0;
 
 arr_trip.forEach(element => {
 	console.log(element);
 });
 
-while (1) {
+while (step < map.stepCount) {
 	arr_veh.forEach(veh => {
 		var shortest_trips: Trip[] = check_shortest(veh, arr_trip);
 		filter_freetrips(shortest_trips);
@@ -85,4 +86,5 @@ while (1) {
 	arr_veh.forEach(veh => {
 		veh.navigate();
 	});
+	step += 1;
 }
