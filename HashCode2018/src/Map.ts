@@ -1,8 +1,11 @@
 import { Car } from "./Car";
 import { Vector2 } from "./Vector2";
+import { Trip } from "./Trip";
+import * as fs from 'fs';
 
 export class Map {
 	cars: Car[];
+	trip: Trip[];
 	sizes: Vector2;
 	ridesCount: number;
 	stepCount: number;
@@ -15,5 +18,14 @@ export class Map {
 		this.ridesCount = ridesCount;
 		this.stepCount = stepCount;
 		this.bonusCount = bonusCount;
+	}
+
+	static init_map(map_name: string): Map {
+		let map: Map;
+		let lines = fs.readFileSync(map_name).toString().split('\n');
+		let args = lines[0].split(' ');
+
+		map = new Map(parseInt(args[2]), parseInt(args[1]), parseInt(args[0]), parseInt(args[3]), parseInt(args[5]), parseInt(args[4]));
+		return (map);
 	}
 }
