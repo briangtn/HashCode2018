@@ -7,10 +7,12 @@ export class Trip {
 	start_time: number;
 	end_time: number;
 	car: Car;
+	completed: Boolean;
 
 	constructor(start: Vector2, end: Vector2) {
 		this.start = start;
 		this.end = end;
 		this.car = null;
+		this.completed = false;
 	}
 }
