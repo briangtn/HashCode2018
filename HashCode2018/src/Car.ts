@@ -3,10 +3,9 @@ import { Trip } from "./Trip";
 
 export class Car {
 	position: Vector2;
-	trips: Trip[];
+	trip: Trip;
 
 	constructor() {
 		this.position = new Vector2(0, 0);
-		this.trips;
 	}
 }

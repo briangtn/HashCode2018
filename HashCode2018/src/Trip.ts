@@ -4,6 +4,8 @@ import { Car } from './Car';
 export class Trip {
 	start: Vector2;
 	end: Vector2;
+	start_time: number;
+	end_time: number;
 	car: Car;
 
 	constructor(start: Vector2, end: Vector2) {
